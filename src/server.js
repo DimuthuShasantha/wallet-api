@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 5001;
 app.use(rateLimiter);
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => res.send("Hello from the backend"));
 app.use("/api/transactions", transactionRoute);
 
 initDB().then(() => {
